@@ -1,4 +1,5 @@
 ```ad-definition
+title: Ecuaciónes diferenciales lineales
 Sea la ecuación
 $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)$$
 donde la variable dependiente es $y = y(x)$.
