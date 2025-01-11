@@ -1,4 +1,3 @@
-## Definición
 
 ```ad-definition
 Una ecuación diferencial de la forma

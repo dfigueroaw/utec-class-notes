@@ -1,11 +1,10 @@
-```ad-definition
-title: Ecuaciónes diferenciales lineales
-Sea la ecuación
+Recordando lo visto en las [[I. Definición y clasificación|clasificaciones de ecuaciones diferenciales]], una ecuación diferencial lineal de primer orden toma la forma
 $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)$$
-donde la variable dependiente es $y = y(x)$.
-```
+donde la variable independiente es $y=y(x)$.
 
-Cuando $g(x)=0$ se dice que la ecuación diferencial es **homogénea**, de lo contrario es **no homogénea**.
+```ad-note
+Cuando $g(x)=0$ se dice que la ecuación diferencial lineal de primer orden es **homogénea**, de lo contrario es **no homogénea**.
+```
 
 Al dividir la ecuación entre $a_1(x)$ se obtiene
 $$\frac{a_1(x)}{a_1(x)}\frac{dy}{dx}+\frac{a_0(x)}{a_1(x)}y=\frac{g(x)}{a_1(x)}$$
