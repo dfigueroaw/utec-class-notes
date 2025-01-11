@@ -2,7 +2,7 @@ Recordando lo visto en las [[I. Definición y clasificación|clasificaciones de 
 $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)$$
 donde la variable independiente es $y=y(x)$.
 
-```ad-note
+```ad-definition
 Cuando $g(x)=0$ se dice que la ecuación diferencial lineal de primer orden es **homogénea**, de lo contrario es **no homogénea**.
 ```
 

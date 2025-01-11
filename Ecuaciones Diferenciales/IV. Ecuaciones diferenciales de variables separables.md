@@ -9,10 +9,8 @@ Para resolver una ecuación diferencial de variables separables se realiza lo si
 
 - **Paso 1**: Separar las variables
 $$\frac{dy}{h(y)} = g(x)dx$$
-
 - **Paso 2**: Aplicar integrales en ambas partes de la ecuación anterior
 $$\int\frac{dy}{h(y)} = \int g(x)dx$$
-
 - **Paso 3**: Integrar
 $$H(y) = G(x) + C$$
 
