@@ -1,6 +1,8 @@
+```ad-definition
 Sea la ecuación
 $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)$$
 donde la variable dependiente es $y = y(x)$.
+```
 
 Cuando $g(x)=0$ se dice que la ecuación diferencial es **homogénea**, de lo contrario es **no homogénea**.
 
@@ -25,10 +27,12 @@ Entonces:
 $$\frac{d}{dx}[\mu(x)y]=\mu(x)Q(x)$$
 - **Paso 5**: Integrar ambos lados
 $$\int\frac{d}{dx}[\mu(x)y]dx=\mu(x)y=\int\mu(x)Q(x)dx$$
-Nota:
+```ad-note
 Podemos cancelar la derivada con la integral en este caso. Si bien estaríamos omitiendo la constante, podemos ver que la constante de todas maneras va a aparecer del otro lado.
+```
 
 **Por lo tanto**:
 $$y=\frac{1}{\mu(x)}\int\mu(x)Q(x)dx$$
-Nota:
+```ad-note
 Podemos ver que $\mu(x)\neq0$ al ser un exponencial, por lo que no deberían haber problemas a la hora de dividir por $\mu(x)$. También podemos notar que si en vez de tomar $\mu(x)$ tomamos $k\cdot\mu(x)$, con $k\in\mathbb{R}-\{0\}$ , la solución no varía pues las constantes se anulan entre sí.
+```

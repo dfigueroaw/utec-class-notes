@@ -1,7 +1,10 @@
+```ad-definition
 Supongamos que tenemos una ecuación diferencial de la forma
 $$M(x, y)dx+N(x, y)dy=0$$
 la ecuación diferencial es exacta si cumple
 $$\frac{\partial M(x, y)}{\partial y}=\frac{\partial N(x, y)}{\partial x}$$
+```
+
 Si encontramos una función $f(x, y)$, que cumple con
 $$M(x, y)=\frac{\partial f(x, y)}{\partial x}, \quad N(x, y)=\frac{\partial f(x, y)}{\partial y}$$
 Entonces la solución de la ecuación diferencial esta dada por $f(x, y)=C$.

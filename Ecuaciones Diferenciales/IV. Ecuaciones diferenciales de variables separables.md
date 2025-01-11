@@ -1,6 +1,8 @@
+```ad-definition
 Una ecuación diferencial de primer orden de la forma
 $$\frac{dy}{dx} = g(x)h(y)$$
 se dice que es separable o tiene variables separables.
+```
 
 Para resolver una ecuación diferencial de variables separables se realiza lo siguiente:
 - **Paso 1**: Separar las variables
@@ -9,9 +11,11 @@ $$\frac{dy}{h(y)} = g(x)dx$$
 $$\int\frac{dy}{h(y)} = \int g(x)dx$$
 - **Paso 3**: Integrar
 $$H(y) = G(x) + C$$
-## Pérdida de solución
 
+```ad-theorem
+title: Pérdida de solución
 Cuando $r$ es cero de $h(y)$, entonces $y = r$ es también una solución de la ecuación (llamada **solución singular**). Sin embargo, esta solución no aparecerá en la integración.
+```
 
 ## Soluciones definidas por integrales
 
