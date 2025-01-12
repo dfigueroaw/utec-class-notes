@@ -22,5 +22,5 @@ La ecuación diferencial ordinaria lineal de orden $n$ está dado, en forma gene
 $$a_n(x) \frac{d^n y}{dx^n} + a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + \cdots + a_1(x) \frac{dy}{dx} + a_0(x) y = g(x)$$
 
 ```ad-note
-También se puede clasificar por grado, que corresponde al exponente al que se encuentra elevado la derivada de orden mayor
+Las ecuaciones diferenciales también se pueden clasificar por grado, que corresponde al exponente al que se encuentra elevado la derivada de orden mayor
 ```
