@@ -1,3 +1,4 @@
+
 ```ad-definition
 Supongamos que tenemos una ecuación diferencial de la forma
 $$M(x, y)dx+N(x, y)dy=0$$
