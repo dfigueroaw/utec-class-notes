@@ -3,30 +3,23 @@
 ```ad-definition
 Es una ecuación que involucra a una función incógnita, sus variables independientes y sus derivadas ordinarias o parciales.
 ```
+
 ## Clasificación de una ecuación diferencial
 
-``` ad-definition
-title: Clasificación por tipo
-
+### Clasificación por tipo
 - **Ecuación diferencial ordinaria (EDO)**: Cuando la función (o las funciones) incógnita depende de solo una variable independiente.
 
 - **Ecuación diferencial parcial (EDP)**: Cuando la función (o las funciones) incógnita depende de varias variables independientes.
-```
 
-```ad-definition
-title: Clasificación por orden
-
+### Clasificación por orden
 El orden de una ecuación diferencial (ya sea EDO o EDP) es el orden de la mayor derivada de la ecuación.
-```
 
-```ad-definition
-title: Clasificación por linealidad
+### Clasificación por linealidad
 Una ecuación diferencial ordinaria de n-ésimo orden se dice que es lineal si la variable dependiente y todas sus derivadas son de primer grado, es decir, la potencia de cada uno de esos terminos es igual a 1. Los coeficientes ${a_0, a_1, a_2, ..., a_n}$ de ${y, \frac{dy}{dx}, \frac{d^2 y}{dx^2}, \ldots, \frac{d^n y}{dx^n}}$ son constantes o a lo más dependen de la variable independinte.
 
 La ecuación diferencial ordinaria lineal de orden $n$ está dado, en forma general, por:
 
 $$a_n(x) \frac{d^n y}{dx^n} + a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + \cdots + a_1(x) \frac{dy}{dx} + a_0(x) y = g(x)$$
-```
 
 ```ad-note
 También se puede clasificar por grado, que corresponde al exponente al que se encuentra elevado la derivada de orden mayor
