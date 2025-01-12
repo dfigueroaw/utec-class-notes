@@ -1,4 +1,3 @@
-
 ```ad-definition
 Una ecuación diferencial de primer orden de la forma
 $$\frac{dy}{dx} = g(x)h(y)$$
