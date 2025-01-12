@@ -1,7 +1,7 @@
 ## Definición
 
 ```ad-definition
-Es una ecuación que involucra a una función incógnita, sus variables independientes y sus derivadas ordinarias o parciales.
+Una ecuación diferencial es una ecuación que involucra a una función incógnita, sus variables independientes y sus derivadas ordinarias o parciales.
 ```
 
 ## Clasificación de una ecuación diferencial
