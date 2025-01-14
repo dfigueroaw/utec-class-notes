@@ -6,3 +6,5 @@ Existen distintas técnicas de imputación para completar los datos faltantes (N
 - **Mediana**: Tomamos cuando el coeficiente de variación es mayor que 0.3 pero menor que 0.6. Incluso si es mayor a 0.6, se toma la mediana.
 **No numéricas**
 - Moda
+
+Un conjunto de datos con moda única se llama **amodal**, y si tiene múltiples modas es multimodal.
