@@ -7,4 +7,4 @@ Existen distintas técnicas de imputación para completar los datos faltantes (N
 **No numéricas**
 - Moda
 
-Un conjunto de datos con moda única se llama **amodal**, y si tiene múltiples modas es multimodal.
+Un conjunto de datos sin moda se llama **amodal** (cuando todos los datos de nuestro conjunto de datos tienen la misma frecuencia). Por otro lado, cuando un conjunto de datos tiene múltiples modas se le llama multimodal.
