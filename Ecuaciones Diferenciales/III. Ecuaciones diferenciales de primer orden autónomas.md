@@ -12,9 +12,9 @@ libre de la variable independienten es denominada autónoma.
 Si $f(c) = 0$, entonces $c$ es un punto crítico, punto de equilibrio o punto estacionario. Si $c$ es un punto crítico, entonces tenemos $0 = f(c) = 0$, por lo tanto, $y(x) = c$ es una solución, denominada **solución de equilibrio**.
 ```
 
-Si garantizamos la existencia y unicidad de la ecuación diferencial en cualquier punto $(x_0, y_0)$ en $\mathcal{R}$, entonces existe una única curva solución.
+Según la cantidad de soluciones de equilibrio, podemos dividir $\mathcal{R}$ en múltiples regiones. Si tenemos un conjunto $S=\{c_1, c_2, \dots, c_n\}$ donde $c_i$ es un punto crítico de $f(y)$ y además $c_1<c_2<\dots<c_n$, entonces las soluciones de equilibrio $y(x)=c_i$ dividen a $\mathcal{R}$ en $n+1$ regiones.
 
-Si posee exactamente dos puntos críticos $c_1$ y $c_2$ ($c_1 < c_2$), las soluciones $y(x) = c_1$ y $y(x) = c_2$ dividen $\mathcal{R}$ en tres regiones.
+Si $f(y)$ posee exactamente dos puntos críticos $c_1$ y $c_2$ ($c_1 < c_2$), las soluciones $y(x) = c_1$ y $y(x) = c_2$ dividen $\mathcal{R}$ en tres regiones.
 
 ### Teoremas
 
