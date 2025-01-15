@@ -41,20 +41,31 @@ Si el punto $(x_0, y_0)$ se encuentran en una de las subregiones de $\mathcal{R}
 Como sabemos que $f$ necesariamente cumple $\frac{dy}{dx}=f(y)$, podrían ocurrir dos situaciones
 - Si consideramos la solución $y(x)=c$, en la que $c$ es una solución de equilibrio de la ecuación diferencial, entonces $\frac{dy}{dx}=0$, por lo tanto la solución $y(x)$ se mantendría constante y por ende se mantendría en la misma subregión.
 - Caso contrario, si tomamos como la solución a la ecuación diferencial una solución distinta a la solución de equilibrio, por el teorema anterior, podemos garantizar que la función será necesariamente o monótona creciente o monótona decreciente en dicha subregión.
-Ahora, para demostrar que $y(x)$ siempre se mantiene en la misma subregión de $\mathcal{R}$, nos centraremos únicamente en el segundo caso, pues el primero ya quedó demostrado. 
+Ahora, para demostrar que $y(x)$ siempre se mantiene en la misma subregión de $\mathcal{R}$, nos centraremos únicamente en el segundo caso, pues el primero ya quedó demostrado.
 
-Primero, empezamos suponiendo que existe el caso en el que $f$ si pudiera cambiar de subregión. En tal caso, el punto $(x_0, y_0)$ se encuentra inicialmente en una subregión de $\mathcal{R}$ en la cual $f$ es monótona. Sin embargo, por el anterior teorema, sabemos que para pasar a otra región necesariamente tenemos que pasar
+Primero, empezamos suponiendo que existe el caso en el que $f$ si pudiera cambiar de subregión. En tal caso, el punto $(x_0, y_0)$ se encuentra inicialmente en una subregión de $\mathcal{R}$ en la cual $f$ es monótona.
+
+Por continuidad, al cambiar de región necesariamente tenemos que pasar por un punto donde $f(y)=0$, lo cual implicaría que tenemos que pasar por un punto en el que $\frac{dy}{dx}=0$ y por lo tanto $y(x)$ sería constante en dicho punto. Sin embargo, si $y(x)$ es constante en ese punto, no podría cruzar a la otra subregión puesto que se detendría en ese valor, llegando a una contradicción.
 
 ```ad-theorem
-Puesto que $\frac{dy}{dx} = f(y)$ es o positivo o negativo en cada una de las subregiones de $\mathcal{R}$, una solución $y(x)$ es **monótona**.
+Puesto que $\frac{dy}{dx} = f(y)$ es o positivo o negativo en cada una de las subregiones de $\mathcal{R}$ en la que $f(y)$ es continua, si consideramos una solución $y(x)$ a la ecuación diferencial entonces necesariamente es **monótona**.
 ```
 ### Demostración
-Del teorema anterior, sabemos que $f(y)$ no puede cambiar de signo en una subregión.
+Sabemos del anterior teorema que si $y(x)$ es una solución a la ecuación diferencial, entonces siempre se mantiene en la misma subregión. Del primer teorema, podemos asegurar que $f(y)$ no puede cambiar de signo en una subregión. 
+
+Como sabemos que $y(x)$ siempre se mantendrá en la misma subregión, además que su razón de cambio $f(y)=\frac{dy}{dx}$ mantendrá el mismo signo mientras se encuentre en dicha región, podemos afirmar que $y(x)$ será o creciente o decreciente en dicha región, lo cual implica que es monótona.
 
 ```ad-theorem
 Si $y(x)$ está acotado por $c_1$ $(y(x) < c_1)$, la gráfica de $y(x)$ se aproximará a $y(x) = c_1$. Si $c_1 < y(x) < c_2$, se aproximará a $y(x) = c_1$ y $y(x) = c_2$. Si $c_2 < y(x)$, se aproximará a $y(x) = c_2$.
 ```
-
-
+### Demostración
+Temporalmente queda pendiente esta demostración, sin embargo esta muy relacionado a los tres teoremas que mencionamos anteriormente. Mientras tanto, animo al lector a buscar alguna forma de demostrar este teorema
 ## Atractores y repulsores
+Recordemos que hemos dividido la región $\mathcal{R}$ en intervalos definidos por sus soluciones de equilibrio. Según como actúa la función $y(x)$ en cada una de estas subregiones podemos nominar a cada uno de los puntos críticos.
 
+![[atractores_y_repulsores.png|center]]
+
+En la imagen anterior, vemos que $c$ es punto crítico de $f(y)$ y por lo tanto representa una solución de equilibrio. En este caso, $y_0$ representa la condición inicial de la ecuación diferencial, que diremos que se encuentra en una de las subregiones que tienen como frontera a $c$. Podemos apreciar varios casos:
+- En el caso de (**a**), la función tiende a $c$ a medida que la variable independiente $x$ **aumenta**. Esta clase de puntos críticos se llaman **asintóticamente estables** o **atractores**.
+- En el caso de (**b**), la función tiende a $c$ a medida que la variable independiente $x$ **disminuye**. Esta clase de puntos críticos se llaman **asintóticamente inestables** o **repulsores**.
+- En el caso de (**c**) y (**d**), la función tiende a $c$ a medida que la variable independiente aumenta o disminuye dependiendo de si $y_0$ es mayor o menor a $c$. Esta clase de puntos críticos se llaman **asintóticamente semiestables**.

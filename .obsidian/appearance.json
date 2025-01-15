@@ -1,5 +1,8 @@
 {
   "cssTheme": "Catppuccin",
   "theme": "system",
-  "accentColor": ""
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "center"
+  ]
 }
