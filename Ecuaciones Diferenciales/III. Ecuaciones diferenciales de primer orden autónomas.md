@@ -9,13 +9,7 @@ libre de la variable independienten es denominada autónoma.
 ## Puntos críticos
 
 ```ad-theorem
-Si $f(c) = 0$, entonces $c$ es un punto crítico, punto de equilibrio o punto estacionario.
-```
-
-Si sustituimos $y(x) = c$, entonces tenemos $0 = f(c) = 0$
-
-```ad-theorem
-Si $c$ es un punto crítico, entonces $y(x) = c$ es una solución, denominada **solución de equilibrio**.
+Si $f(c) = 0$, entonces $c$ es un punto crítico, punto de equilibrio o punto estacionario. Si $c$ es un punto crítico, entonces tenemos $0 = f(c) = 0$, por lo tanto $y(x) = c$ es una solución, denominada **solución de equilibrio**.
 ```
 
 Si garantizamos la existencia y unicidad de la ecuación diferencial en cualquier punto $(x_0, y_0)$ en $\mathcal{R}$, entonces existe una única curva solución.
