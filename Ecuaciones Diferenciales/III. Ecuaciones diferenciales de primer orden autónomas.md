@@ -6,7 +6,7 @@ $$\frac{dy}{dx} = f(y)$$
 libre de la variable independienten es denominada autónoma.
 ```
 
-Como veremos a continuación, las ecuaciones diferenciales de primer orden autónomas cumplen con muchas propiedades interesantes debido a su forma particular en la que la función que se tiene en términos de la variable independiente es igual a su derivada.
+Como veremos a continuación, las ecuaciones diferenciales de primer orden autónomas cumplen con muchas propiedades interesantes debido a la forma particular que presentan: la derivada de la función objetivo es igual a una función en términos de la variable dependiente.
 ## Puntos críticos
 
 ```ad-theorem
