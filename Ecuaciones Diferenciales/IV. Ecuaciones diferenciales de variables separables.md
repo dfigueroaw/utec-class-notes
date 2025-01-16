@@ -23,6 +23,13 @@ Esta perdida de solución ocurre pues al resolver la ecuación diferencial reali
 ## Soluciones definidas por integrales
 
 Si $g$ es una función continua en el intervalo abierto $I$ que contiene a $x_0$, entonces el problema de valor inicial
-$$\frac{dy}{dx} = g(x), \quad g(x_0) = y_0$$
+$$\frac{dy}{dx} = g(x), \quad y(x_0) = y_0$$
 tiene por solución
 $$y(x) = y_0 + \int_{x_0}^xg(t)dt$$
+### Demostración
+De la ecuación diferencial $\frac{dy}{dx}=g(x)$, vemos que la solución general toma la forma
+$$y=\int g(x)dx=G(x)+C$$
+De la condición inicial podemos ver que
+$$y_0=G(x_0)+C\rightarrow y_0-G(x_0)=C$$
+Finalmente
+$$y=y_0+G(x)-G(x_0)=y_0+\int_{x_0}^{x}g(t)dt$$
