@@ -19,6 +19,8 @@ $$M(x, y)dx+N(x, y)dy=0$$
 Podemos notar que la ecuación diferencial tiene un gran parecido con la expresión del diferencial de la función $f(x, y)$, por ende lo que haremos será relacionar ambas ecuaciones mediante la siguiente igualdad
 $$M(x, y)=\frac{\partial f}{\partial x}, \quad N(x, y)=\frac{\partial f}{\partial y}$$
 Podemos ver que, de forma general, la solución está definida implícitamente por $f(x, y)=C$, siendo $C$ una constante.
+
+Sin embargo, aun nos queda garantizar que las funciones $M(x, y)$ y $N(x, y)$ cumplan con 
 ## Pasos para resolver una ecuación diferencial exacta
 
 PENDIENTE COMPLETAR
