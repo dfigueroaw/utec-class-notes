@@ -11,7 +11,6 @@ $$\frac{a_1(x)}{a_1(x)}\frac{dy}{dx}+\frac{a_0(x)}{a_1(x)}y=\frac{g(x)}{a_1(x)}$
 resultando en
 $$\frac{dy}{dx}+P(x)y=Q(x)$$
 lo cual se denomina como la forma estándar.
-
 ## Resolver una ecuación diferencial lineal de primer orden
 - **Paso 1**: Llevar la ecuación a su forma estándar
 $$\frac{dy}{dx}+P(x)y=Q(x)$$
