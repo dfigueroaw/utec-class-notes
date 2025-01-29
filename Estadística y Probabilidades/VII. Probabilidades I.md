@@ -24,3 +24,6 @@ Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se ca
 >$$\frac{-b\pm\sqrt{b²-4ac}}{2a}$$
 >
 
+>[!warning]
+>hola
+
