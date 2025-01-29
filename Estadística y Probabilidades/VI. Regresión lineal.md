@@ -19,9 +19,8 @@ En resumen:
 - $R^2$: Mide en que medida la variable dependiente $y$ es explicada por el modelo de regresión ajustado
 - $r$: Mide el grado de asociación entre dos variables numéricas
 
-```ad-note
-La variable $x$ suele llamarse la variable explicativa, mientras que la variable $y$ se denomina dependiente.
-```
+>[!note]
+>La variable $x$ suele llamarse la variable explicativa, mientras que la variable $y$ se denomina dependiente.
 
 En **r**, la función `lm(y~x)` nos retorna tanto el intercepto de la función lineal (el valor de $b$) como la pendiente $m$. Adicionalmente, `cor(x, y)` nos retorna el **coeficiente de correlación**.
 
