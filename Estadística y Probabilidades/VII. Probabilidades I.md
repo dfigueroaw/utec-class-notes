@@ -36,3 +36,21 @@ Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se ca
 >$$ax²+\sqrt{b}$$
 
 
+> [!NOTE]
+> This is a note.
+
+> [!TIP]
+> This is a tip.
+
+> [!IMPORTANT]
+> This is important.
+
+> [!WARNING]
+> This is a warning.
+
+> [!CAUTION]
+> This is a caution.
+
+<div style="border-left: 5px solid red; padding: 10px; background-color: #000000;">
+  <strong>Custom Warning</strong>: This is a custom-styled alert.
+</div>
