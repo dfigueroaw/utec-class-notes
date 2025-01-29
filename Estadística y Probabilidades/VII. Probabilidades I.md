@@ -13,7 +13,7 @@ $$P(A/B)=\frac{P(A\cap B)}{P(B)}$$
 
 Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se calcula como la probabilidad de la intersección de ambos eventos dividido la probabilidad del evento $B$.
 
->[!note]
+>[!note]+
 >Esta nota es una prueba
 >de un nuevo tipo de notas
 >
@@ -54,3 +54,7 @@ Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se ca
 <div style="border-left: 5px solid red; padding: 10px; background-color: #000000;">
   <strong>Custom Warning</strong>: This is a custom-styled alert.
 </div>
+
+>[!important]
+>Una ecuación diferencial es una ecuación que involucra a una función incógnita, sus variables independientes y sus derivadas ordinarias o parciales.
+
