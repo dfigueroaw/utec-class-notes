@@ -7,9 +7,8 @@ Existen tres elementos principales de estudio
 V.A. es **Variable Aleatoria**
 ```
 
-
 ## Probabilidad Condicional
 
 $$P(A/B)=\frac{P(A\cap B)}{P(B)}$$
 
-Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se calcula como la intersección de ambos eventos dividido la 
+Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se calcula como la probabilidad de la intersección de ambos eventos dividido la probabilidad del evento $B$.
