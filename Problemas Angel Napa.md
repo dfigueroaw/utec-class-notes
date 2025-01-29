@@ -60,6 +60,35 @@ $$\{(2, 0), (5, 6), (8, 0)\}$$
 ## Problema 1
 **Enunciado**: Calcular los últimos tres dígitos de $7^{2025}$.
 
+Para empezar, vamos a calcular los 5 primeros valores de $7^n$
+
+7¹=7
+7²=49
+7³=343
+7⁴=2401
+7⁵=16807
+
+Vemos que los dos últimos dígitos siguen el patrón de 07 -> 49 -> 43 -> 01. 
+
+
 ## Problema 2
 **Enunciado**: Determina todos los valores que podría tomar un entero positivo $n$, de modo que se cumpla que $2^n$ sea un divisor de $3^n+1$.
+
+Primero probamos 5 valores para tener una idea del patrón de los términos
+
+$f(n)=\frac{3^{n}+1}{2^n}$
+$f(1)=2$
+$f(2)=\frac{5}{2}$
+$f(3)=\frac{7}{2}$
+$f(4)=\frac{41}{8}$
+$f(5)=\frac{61}{8}$
+...
+
+Vemos que para $n=1$, efectivamente $2^n$ es divisor de $3^n+1$. Por inducción, se va a demostrar que $\forall n\geq2$, $2^n$ no es divisor de $3^n+1$
+
+Caso Base:
+$P(2): 4 \nmid 10$
+
+Hipótesis Inductiva:
+$P(n): 2^n\nmid 3^n+1$
 
