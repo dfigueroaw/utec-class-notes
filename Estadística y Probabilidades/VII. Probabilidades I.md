@@ -27,3 +27,6 @@ Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se ca
 >[!warning]
 >hola
 
+>[!theorem]
+>teorema 1
+
