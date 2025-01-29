@@ -29,4 +29,10 @@ Significa la probabilidad que ocurra un evento $A$ dado cierto evento $B$. Se ca
 
 >[!theorem]
 >teorema 1
+>no se
+>
+>como funciona
+>
+>$$ax²+\sqrt{b}$$
+
 
