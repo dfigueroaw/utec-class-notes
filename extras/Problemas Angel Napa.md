@@ -116,7 +116,7 @@ $a_4=\frac{41}{8}$
 $a_5=\frac{61}{8}$
 ...
 
-Vemos que para $n=1$, efectivamente $2^n$ es divisor de $3^n+1$. Por inducción, se va a demostrar que $\forall n\geq2$, $2^n$ no es divisor de $3^n+1$
+Vemos que para $n=1$, efectivamente $2^n$ es divisor de $3^n+1$. Por inducción, se va a demostrar que $\forall n\geq2$, $2^n$ no es divisor de $3^n+1$.
 
 Caso Base:
 $P(2): 4 \nmid 10$
