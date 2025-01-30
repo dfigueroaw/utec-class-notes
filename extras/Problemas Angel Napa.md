@@ -106,6 +106,8 @@ $7^{13}\equiv407\pmod{1000}$
 
 De aquí notamos que partiendo de $n=1$, cada vez que el exponente aumenta en 4 la cifra de las centenas disminuye en 2. Bajo esta suposición, entonces los tres últimos dígitos se repetirían cada 5 veces que el exponente aumenta en 4, es decir, en ciclos de 20.
 
+$7^{20k}\equiv1\pmod{1000}$
+
 ## Problema 2
 **Enunciado**: Determina todos los valores que podría tomar un entero positivo $n$, de modo que se cumpla que $2^n$ sea un divisor de $3^n+1$.
 
