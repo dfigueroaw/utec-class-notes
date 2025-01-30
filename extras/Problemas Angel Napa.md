@@ -104,7 +104,7 @@ $7^{11}\equiv743\pmod{1000}$
 $7^{12}\equiv201\pmod{1000}$
 $7^{13}\equiv407\pmod{1000}$
 
-De aquí notamos que partiendo de $n=1$, cada vez que el exponente aumenta en 4 la cifra de las centenas disminuye en 2. De esta suposición, lo que queremos probar es que para números de la forma $7^{4k+1}$
+De aquí notamos que partiendo de $n=1$, cada vez que el exponente aumenta en 4 la cifra de las centenas disminuye en 2. Bajo esta suposición, entonces los tres últimos dígitos se repetirían cada 5 veces que el exponente aumenta en 4, es decir, en ciclos de 20.
 
 ## Problema 2
 **Enunciado**: Determina todos los valores que podría tomar un entero positivo $n$, de modo que se cumpla que $2^n$ sea un divisor de $3^n+1$.
