@@ -60,36 +60,9 @@ $$\{(2, 0), (5, 6), (8, 0)\}$$
 ## Problema 1
 **Enunciado**: Calcular los últimos tres dígitos de $7^{2025}$.
 
-Para empezar, vamos a calcular los 5 primeros valores de $7^n$
+Empezaremos desarrollando las primeras potencias de 7 con el fin de notar un posible patrón. Como nos interesa encontrar un patrón específicamente en los tres últimos dígitos, nos fijaremos únicamente en estos tres usando el operador módulo a la hora de aplicar las potencias.
 
-7¹=7
-7²=49
-7³=343
-7⁴=2401
-7⁵=16807
-
-Vemos que los dos últimos dígitos siguen el patrón de 07 -> 49 -> 43 -> 01, repitiéndose indefinidamente en ciclos de 4. 2025 es un número de la forma $4k+1$, así que queremos demostrar que los dos últimos dígitos de un número de la forma $7^{4k+1}$ son 07, es decir, que podemos escribir el número $7^{4k+1}$ como $7+100n$.
-
-Caso base:
-$P(0): 7¹=7+100(0)$
-
-Hipótesis inductiva:
-$P(k): 7^{4k+1}=7+100n,\forall k\geq0$
-
-Sabemos que 7⁴=2401. Multiplicando por 2401 ambos lados de la igualdad
-
-$(7^{4k+1})(7⁴)=7^{4(k+1)+1}=(7+100n)2401$
-
-$7^{4(k+1)+1}=16807+(100)(2401)(n)=7+(100)(168)+(100)(2401)(n)$
-
-Hacemos un cambio de variable $m=168+2401n$
-
-$7^{4(k+1)+1}=7+100m\rightarrow P(k+1)$
-
-Lo cual demuestra nuestra proposición inicial. Con esto, vemos que los dos últimos dígitos son 07.
-
-Para la tercera cifra, lo que haremos será seguir desarrollando las potencias de 7 hasta notar un posible patrón. Como nos interesa encontrar un patrón específicamente en el tercer dígitos, haremos el cálculo de únicamente los valores para los 3 primeros dígitos
-
+$7^{0}\equiv1\pmod{1000}$
 $7¹\equiv7\pmod{1000}$
 $7²\equiv49\pmod{1000}$
 $7^3\equiv343\pmod{1000}$
@@ -99,26 +72,48 @@ $7⁶\equiv649\pmod{1000}$
 $7⁷\equiv543\pmod{1000}$
 $7⁸\equiv801\pmod{1000}$
 $7⁹\equiv607\pmod{1000}$
-$7^{10}\equiv249\pmod{1000}$
-$7^{11}\equiv743\pmod{1000}$
-$7^{12}\equiv201\pmod{1000}$
-$7^{13}\equiv407\pmod{1000}$
 
-De aquí notamos que partiendo de $n=1$, cada vez que el exponente aumenta en 4 la cifra de las centenas disminuye en 2. Bajo esta suposición, entonces los tres últimos dígitos se repetirían cada 5 veces que el exponente aumenta en 4, es decir, en ciclos de 20.
+De aquí podemos notar dos patrones. Primero, vemos que los dos últimos dígitos repiten un patrón de 07 -> 49 -> 43 -> 01, repitiéndose indefinidamente en ciclos de 4. Además, notamos que partiendo de $n=1$, cada vez que el exponente aumenta en 4 la cifra de las centenas disminuye en 2. Para visualizar esta última hipótesis, podemos desarrollar algunas potencias más.
+
+$7^{13}\equiv407\pmod{1000}$
+$7^{17}\equiv207\pmod{1000}$
+$7^{21}\equiv7\pmod{1000}$
+
+Podemos efectivamente notar un patrón en los números al realizar estos aumentos de cuatro. Sin embargo, podemos ver que después de repetir este proceso cinco veces, cuando llegamos a $n=21$, volvemos a obtener el mismo resultado que para $n=1$. De esto, podemos ver que probablemente existe una relación entre los $n$ con diferencias de 20. Para comprobar esto, podemos plantear un par de casos más.
+
+$7^{20}\equiv1\pmod{1000}$
+$7^{21}\equiv7\pmod{1000}$
+$7^{22}\equiv49\pmod{1000}$
+
+Podemos notar que después de 20 dígitos, empieza a ocurrir cierto patrón en las congruencias. Nuestra hipótesis será que los tres últimos dígitos de una potencia de 7 serán los mismos cada vez que el exponente aumente en saltos de 20. Matemáticamente, queremos probar que $7^{n+20k}\equiv7^{n}\pmod{1000}$.
+
+Empezamos reescribiendo el lado izquierdo de la igualdad
+
+$7^{n}7^{20k}\equiv7^{n}\pmod{1000}$
+
+Como $7^n$ y 1000 son coprimos, podemos plantear que existe un inverso multiplicativo modular de ${7^n}$. De esto, obtenemos...
 
 $7^{20k}\equiv1\pmod{1000}$
+
+$(7^{20})^k\equiv1\pmod{1000}$
+
+Sabemos que si $7^{20}\equiv1\pmod{1000}$, entonces $(7^{20})^k\equiv1\pmod{1000}$. Comprobando para $7^{20}$...
+
+$7^{20}\equiv1\pmod{1000}$
+
+Lo cual como vimos al inicio es verdad, por lo tanto nuestra hipótesis es verdadera. Al inicio vimos que para $n=5$ tenemos que $7⁵\equiv807\pmod{1000}$, usando la propiedad que acabamos de demostrar y tomando $k=101$, entonces podemos ver que $7^{2025}\equiv807\pmod{1000}$. Por lo tanto, podemos ver que los tres últimos dígitos de $7^{2025}$ son **807**.
 
 ## Problema 2
 **Enunciado**: Determina todos los valores que podría tomar un entero positivo $n$, de modo que se cumpla que $2^n$ sea un divisor de $3^n+1$.
 
-Primero probamos 5 valores para tener una idea del patrón de los términos
+Nuevamente empezamos probando con los primeros valores para verificar posibles patrones en los términos.
 
-$f(n)=\frac{3^{n}+1}{2^n}$
-$f(1)=2$
-$f(2)=\frac{5}{2}$
-$f(3)=\frac{7}{2}$
-$f(4)=\frac{41}{8}$
-$f(5)=\frac{61}{8}$
+$a_n=\frac{3^{n}+1}{2^n}$
+$a_1=2$
+$a_2=\frac{5}{2}$
+$a_3=\frac{7}{2}$
+$a_4=\frac{41}{8}$
+$a_5=\frac{61}{8}$
 ...
 
 Vemos que para $n=1$, efectivamente $2^n$ es divisor de $3^n+1$. Por inducción, se va a demostrar que $\forall n\geq2$, $2^n$ no es divisor de $3^n+1$
