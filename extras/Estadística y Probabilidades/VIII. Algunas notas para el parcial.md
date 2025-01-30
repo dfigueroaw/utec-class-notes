@@ -1,0 +1,1 @@
+Un problema que podríamos encontrar con los datos atípitcos es que hayan muchos datos atípicos iguales lo cual nos impediría visualizarlos con un boxplot. Para esto, si tenemos un boxplot en una variable `a`, 
