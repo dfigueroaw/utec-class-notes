@@ -88,7 +88,23 @@ $7^{4(k+1)+1}=7+100m\rightarrow P(k+1)$
 
 Lo cual demuestra nuestra proposición inicial. Con esto, vemos que los dos últimos dígitos son 07.
 
+Para la tercera cifra, lo que haremos será seguir desarrollando las potencias de 7 hasta notar un posible patrón. Como nos interesa encontrar un patrón específicamente en el tercer dígitos, haremos el cálculo de únicamente los valores para los 3 primeros dígitos
 
+$7¹\equiv7\pmod{1000}$
+$7²\equiv49\pmod{1000}$
+$7^3\equiv343\pmod{1000}$
+$7⁴\equiv401\pmod{1000}$
+$7⁵\equiv807\pmod{1000}$
+$7⁶\equiv649\pmod{1000}$
+$7⁷\equiv543\pmod{1000}$
+$7⁸\equiv801\pmod{1000}$
+$7⁹\equiv607\pmod{1000}$
+$7^{10}\equiv249\pmod{1000}$
+$7^{11}\equiv743\pmod{1000}$
+$7^{12}\equiv201\pmod{1000}$
+$7^{13}\equiv407\pmod{1000}$
+
+De aquí notamos que cada vez que partiendo de $n=1$, cada vez que el exponente
 
 ## Problema 2
 **Enunciado**: Determina todos los valores que podría tomar un entero positivo $n$, de modo que se cumpla que $2^n$ sea un divisor de $3^n+1$.
