@@ -26,4 +26,4 @@ En **r**, la función `lm(y~x)` nos retorna tanto el intercepto de la función l
 
 Para graficar la regresión lineal, usamos primero la función `plot(y~x)` y luego para mostrar la recta usamos `abline(lm(y~x), col="red")` para crear una recta con la recta obtenida por nuestra regresión
 
-SI queremos la correlación de una data que no esta limpia, usaremos la función `cor(x, y, use="complete.obs")`, pues queremos contar únicamente las observaciones que contengan $x$ e $y$.
+Si queremos la correlación de una data que no esta limpia, usaremos la función `cor(x, y, use="complete.obs")`, pues queremos contar únicamente las observaciones que contengan $x$ e $y$.
