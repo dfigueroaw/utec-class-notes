@@ -1,0 +1,280 @@
+---
+title: "Aprendiendo R"
+author: "Antonio Gamero"
+format: html
+editor: visual
+---
+
+## Instalando paquetes y librerías:
+
+```{r}
+#install.packages("readr")
+#install.packages("modeest")
+library(readr)
+library(modeest)
+```
+
+Ruta actual donde se debe encontrar el archivo con extensión csv:
+
+```{r}
+getwd() # Ruta del directorio actual
+```
+
+Ruta nueva donde se debe encontrará el archivo con extensión csv:
+
+```{r}
+setwd("D:/UTEC/DATA")
+```
+
+Verificando el cambio de ruta realizado:
+
+```{r}
+getwd()
+```
+
+Leyendo el archivo:
+
+```{r}
+DF <- read_csv("obesidad.csv")
+```
+
+Visualizando el contenido del archivo en una nueva pestaña:
+
+```{r}
+View(DF)
+```
+
+### Indentificando valores faltantes:
+
+```{r}
+# Mostrar el número de valores faltantes por columna:
+apply(is.na(DF),2,sum)
+```
+
+### Visualizando los nombres de las columnas:
+
+```{r}
+colnames(DF)
+```
+
+### Cambio de nombre a una variable (columna):
+
+```{r}
+colnames(DF)[12] <- "history"
+```
+
+### Explorando el dataset:
+
+```{r}
+str(DF)
+```
+
+### Verificando el cambio realizado:
+
+```{r}
+colnames(DF)
+```
+
+## Medidas de tendencia central
+
+**Media aritmética (media):**
+
+```{r}
+media_edad <- mean(DF$Age)
+media_edad
+```
+
+Si rededondeamos el valor obtenido a 2 decimales:
+
+```{r}
+media_edad_redondeada <- round(media_edad,2)
+media_edad_redondeada
+```
+
+**Mediana:**
+
+```{r}
+mediana_edad <- median(DF$Age)
+mediana_edad
+```
+
+Si rededondeamos el valor obtenido a 2 decimales:
+
+```{r}
+mediana_edad_redondeada <- round(mediana_edad,2)
+mediana_edad_redondeada
+```
+
+**Moda:**
+
+```{r}
+# La función mfv permite calcular la moda.
+moda_edad <- mfv(DF$Age)
+moda_edad
+```
+
+## Independizando las variables del data frame
+
+```{r}
+attach(DF)
+```
+
+**Ejercicio 1:**
+
+Calcular las medidas de tendencia central usando una aproximación de 2 decimales para la variable estatura.
+
+```{r}
+# Media
+media_estatura <- mean(Height)
+media_estatura
+# Mediana
+mediana_estatura <- median(Height)
+mediana_estatura
+# Moda
+moda_estatura <- mfv(Height)
+moda_estatura
+```
+
+Aplicando la aproximación:
+
+```{r}
+# Media
+media_estatura <- round(mean(Height),2)
+media_estatura
+# Mediana
+mediana_estatura <- round(median(Height),2)
+mediana_estatura
+# Moda
+moda_estatura <- round(mfv(Height),2)
+moda_estatura
+```
+
+## Medidas de dispersión
+
+Permiten analizar la variabilidad de un conjunto de datos de tipo numérico respecto a las medidas de tendencia central.
+
+**Rango (R):**
+
+Es la diferencia entre el máximo y mínimo valor de un conjunto de datos.
+
+**Ejemplo 1:**
+
+Usando la variable la variable peso (Weight):
+
+```{r}
+rango_peso <- max(Weight)-min(Weight)
+rango_peso
+```
+
+**Rango Intercuartílico (RI):**
+
+Es la diferencia entre el tercer y primer cuartil (Q3 - Q1):
+
+25% 25% 25% 25%\
+\|\_\_\_\_\_\_\_\_\_\_\_\_\_\_\|\_\_\_\_\_\_\_\_\_\_\_\_\_\_\|\_\_\_\_\_\_\_\_\_\_\_\_\_\_\|\_\_\_\_\_\_\_\_\_\_\_\_\_\_\|
+
+Min Q1 Q2 Q3 Max
+
+**Ejemplo 2:**
+
+Usando la variable la variable peso (Weight):
+
+```{r}
+RI_peso <- IQR(Weight)
+RI_peso
+```
+
+**Varianza (VA):**
+
+Es el promedio de desviaciones cuadráticas respecto a la media.
+
+**Ejemplo 3:**
+
+```{r}
+varianza_peso <- var(Weight)
+varianza_peso
+```
+
+**Desviación estándar (DE):**
+
+Mide la dispersión de la variable respecto a la media.
+
+```{r}
+DE_peso <- sd(Weight)
+DE_peso
+```
+
+Otra forma:
+
+```{r}
+DE_peso1 <- sqrt(varianza_peso)
+DE_peso1
+```
+
+**Coeficiente de variación:**
+
+Es la relación entre la desviación estándar y la media.
+
+$CV=\frac{DE}{Media}\cdot100\%$
+
+**Interpretación:**
+
+Si $CV<30\%$, los datos presentan homogenidad (dispersión baja).
+
+Si $30\%\leq CV<60\%$, los datos presentan una variabilidad regular (dispersión regular).
+
+Si $CV\geq60\%$, los datos presentan heterogeneidad (dispersión alta).
+
+**Ejemplo 4:**
+
+```{r}
+# Cálculo del coeficiente de variación en unidades porcentuales
+CV_peso <- (DE_peso/mean(Weight))*100
+CV_peso
+```
+
+## Análisis exploratorio de los datos:
+
+Obtener un resumen de medidas estadísticas:
+
+En variables numéricas:
+
+Min. -\> mínimo\
+1st Qu. -\> primer cuartil (Q1)\
+Median -\> mediana\
+Mean -\> media\
+3rd Qu. -\> tercer cuartil (Q3)\
+Max. -\> máximo
+
+```{r}
+summary(DF)
+```
+
+**Ejercicio 2:**
+
+Analizar las variables edad, estatura y peso para indicar:
+
+Usar para los cálculos una aproximación de 2 decimales:
+
+1\) La variable que presenta menos dispersión teniendo en cuenta el coeficiente de variación.
+
+```{r}
+CV_edad <- round(sd(Age)/mean(Age),2)
+CV_edad
+```
+
+```{r}
+CV_estatura <- round(sd(Height)/mean(Height),2)
+CV_estatura
+```
+
+```{r}
+CV_peso <- round(sd(Weight)/mean(Weight),2)
+CV_peso
+```
+
+**Conclusión:** La variable estatura (Height) presenta menor dispersión por tener el menor coeficiente de variación.
+
+2\) En qué variable(s) se puede considerar que la media es representativa. Justifique su respuesta.
+
+En las variables edad (Age) y estatura (Height) la media es más representativa porque en ambos casos el coeficiente de variación es menor a 0.3.

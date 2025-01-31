@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Q1 - primer quiz</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Cuytopia_Q1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Cuytopia_Q1_files/libs/quarto-html/quarto.js"></script>
+<script src="Cuytopia_Q1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Cuytopia_Q1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Cuytopia_Q1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Cuytopia_Q1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Cuytopia_Q1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Cuytopia_Q1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Cuytopia_Q1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Cuytopia_Q1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Q1 - primer quiz</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="cuytopia" class="level2">
+<h2 class="anchored" data-anchor-id="cuytopia">Cuytopia</h2>
+<p>El proveedor de cuyes <em>Cuytopia</em> está tratando de comprender la población de cuyes en su chacra principal. <em>Cuytopia</em> se especializa en cuyes de libre pastoreo para mascotas, consumo y la industria médica.</p>
+<p>La compañía estima que debe tener cerca de 150000 cuyes adultos en sus terrenos.</p>
+<p>Para comprender mejor esa población, han decidido llevar a cabo un estudio estadístico.</p>
+<section id="procedimiento-de-recolección-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="procedimiento-de-recolección-de-datos">Procedimiento de recolección de datos</h3>
+<p>Se conformarán cinco grupos de tres empleados con responsabilidades diferentes.</p>
+<p>Cada grupo consiste de:</p>
+<ul>
+<li>1 <em>Atrapador</em>: se encarga de buscar los cuyes y notificar a los registradores los valores de las variables <code>Raza</code>, <code>Sexo</code> y <code>Color</code> según su juicio y experiencia. Se encarga de marcar con una pintura no tóxica el cuy procesado para no volver a capturarlo.</li>
+<li>1 <em>Medidor</em>: se encarga de tomar y reportar, uno por uno y en orden, los valores de las variables <code>Peso</code>, <code>Largo</code>, <code>Cintura</code> y <code>Edad</code>. Se encarga de estimar el valor de la <code>Talla</code> del cuy en función a las mediciones y su experiencia, finalmente reporta ese valor.</li>
+<li>1 <em>Registrador</em>: se encarga de anotar de manera legible, en las planillas suministradas, los valores de las distintas variables de cada cuy.</li>
+</ul>
+<p>Los tres grupos se ubicarán en puntos específicos de la chacra con los equipos de medición y los atrapadores saldrán a buscar los cuyes uno por uno.</p>
+<p>Los atrapadores saben donde encontrar los cuyes en el terreno. Es importante recordar que es una chacra de libre pastoreo por lo que los cuyes no están confinados a jaulas.</p>
+<p>Los equipos trabajarán de manera simultánea, por ocho horas, a lo largo de 15 días (tres semanas). Se ha estimado que procesarán 120 cuyes diarios, por lo que al final del proceso deberían tener una muestra de 5400 cuyes diferentes.</p>
+<p>La compañía ha ofrecido un bono monetario para los tres grupos si logran registrar la cantidad objetivo de 5000 cuyes en la muestra.</p>
+</section>
+<section id="libreta-de-códigos" class="level3">
+<h3 class="anchored" data-anchor-id="libreta-de-códigos">Libreta de códigos</h3>
+<p>Los aspectos de interés para el estudio son:</p>
+<ul>
+<li><code>Raza</code>: debería ser una de las especificadas en la siguiente lista; <code>abisinio</code>, <code>andino</code>, <code>híbrido</code>, <code>peruano</code>, <code>americano</code>, <code>rex</code> o <code>skinny</code>.</li>
+<li><code>Sexo</code>: debería ser <code>hembra</code> o <code>macho</code>.</li>
+<li><code>Color</code>: debería ser uno de los especificados en la siguiente lista; <code>negro</code>, <code>tricolor</code>, <code>blanco</code>, <code>pintado</code>, <code>rojizo</code>, <code>marrón</code>, <code>marrón oscuro</code>, <code>gris</code> o <code>rosa</code></li>
+<li><code>Peso</code>: en gramos, debería ser un número positivo con dos decimales, no mayor que 3000 gramos.</li>
+<li><code>Largo</code>: en centímetros enteros, debería ser un número entero positivo entre 10 y 50 centímetros.</li>
+<li><code>Cintura</code>: en centímetros enteros, debería ser un número entero positivo entre 10 y 30 centímetros.</li>
+<li><code>Talla</code>: debería ser una de las especificadas en la siguiente lista; <code>flaco</code>, <code>sano</code>, <code>gordo</code>, <code>obeso</code></li>
+<li><code>Edad</code>: en meses enteros, debería ser un número entero positivo entre 8 y 72 meses.</li>
+</ul>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,64 @@
+---
+title: "simulacro_q1"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+getwd() # Ruta del archivo actual
+setwd("C:/Users/dfigu/OneDrive/Documents/RStudio/datasets") # Cambiamos de directorio
+getwd() # Ruta nueva (carpeta de datasets, donde accederemos a nuestro archivo csv)
+DF <- read.csv("cuytopia.csv") # Leemos el CSV
+View(DF) # Mostrar el DF en pantalla
+```
+
+Pregunta 1:
+
+```{r}
+
+```
+
+Pregunta 2:
+
+```{r}
+
+```
+
+Pregunta 3:
+
+```{r}
+
+```
+
+Pregunta 4:
+
+```{r}
+
+```
+
+Pregunta 5:
+
+```{r}
+
+```
