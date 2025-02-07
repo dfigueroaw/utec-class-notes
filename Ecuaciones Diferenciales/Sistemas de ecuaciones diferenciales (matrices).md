@@ -20,7 +20,7 @@ $P$ se obtiene de resolver el sistema
 
 $$(A-\lambda I_n)P=K$$
 
-1. En caso un eigenvalor $\lambda$ con multiplicidad 3 solo tiene un eigenvector $K$ asociado, entonces la solución general está dada por:
+3. En caso un eigenvalor $\lambda$ con multiplicidad 3 solo tiene un eigenvector $K$ asociado, entonces la solución general está dada por:
 
 $$X=c_1Ke^{\lambda t}+c_2\left(Kte^{\lambda t}+Pe^{\lambda t}\right)+c_3\left(K\frac{t^2}{2}e^{\lambda t}+Pte^{\lambda t}+Qe^{\lambda t}\right)+\dots$$
 
