@@ -1,0 +1,12 @@
+## Ideas que se podrían implementar
+- Saludar por los cumpleaños a los miembros Senior para reforzar el sentido de comunidad, de alguna manera reconociendo el esfuerzo de los miembros
+- Analizar los medios de comunicación más efectivos, evaluando donde se genera una mayor respuesta de la comunidad
+- Competencias de trabajo en equipo (5C):
+	- Comunicación
+	- Compromiso
+	- Coordinación
+	- Confianza
+	- Complementariedad
+- Generar un espacio de comunidad en el que el estudiante pueda sentirse en confianza y seguro. Las actividades de integración son una buena manera de reforzar esto.
+- Identificar las capacidades de cada miembro y adaptar las responsabilidades según esto.
+- 
