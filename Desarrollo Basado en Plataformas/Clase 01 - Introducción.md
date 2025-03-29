@@ -32,3 +32,13 @@ Indican el resultado de una solicitud.
 - **404 No Encontrado**: El recurso solicitado no existe.
 - **500 Error Interno del Servidor**: Hubo un error en el lado del servidor.
 - **503 Servicio No Disponible**: El servidor está temporalmente no disponible.
+### Código de ejemplo (FastAPI)
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def hello_world():
+    return {"Hello": "World"}
+```
