@@ -33,6 +33,8 @@ Indican el resultado de una solicitud.
 - **500 Error Interno del Servidor**: Hubo un error en el lado del servidor.
 - **503 Servicio No Disponible**: El servidor está temporalmente no disponible.
 ### Código de ejemplo (FastAPI)
+Para este ejemplo, se creó un entorno virtual en el que se instalaron las librerías **fastapi**, **uvicorn**, **pydantic** y **fastapi[standard]**.
+
 ```python
 from fastapi import FastAPI
 
@@ -41,4 +43,31 @@ app = FastAPI()
 @app.get("/")
 def hello_world():
     return {"Hello": "World"}
+```
+
+Aquí un pequeño ejemplo de lo que podemos hacer con FastAPI
+
+```python
+from fastapi import FastAPI  
+  
+app = FastAPI()  
+  
+clients = [  
+    {        
+	    "name": "diego",  
+        "balance": 10  
+    },  
+    {        
+	    "name": "alonso",  
+        "balance": 20  
+    }  
+]  
+  
+@app.get("/")  
+def main():  
+    return {"Hello": "Diego"}  
+  
+@app.get("/clients")  
+def get_clients():  
+    return clients
 ```
