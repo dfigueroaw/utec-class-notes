@@ -8,6 +8,22 @@ Añade **información adicional** para modificar o afinar la solicitud **sin cam
 Identifica un recurso específico en el servidor. Se envían como parte de la ruta o endpoint de la URL y suelen ser obligatorios.
 ### Request Body
 Datos adicionales para crear, actualizar o realizar operaciones complejas sobre el recurso específico. Especialmente útil cuando hay necesidad de enviar información estructurada, como un objeto completo. Para esto, podemos apoyarnos, por ejemplo, del uso de **Pydantic**.
+#### Ejemplo
+```python
+PUT /api/users/123?include=details HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+Content-Length: 85
+Authorization: Bearer abcdef123456
+Accept: */*
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "status": "active"
+}
+```
+
 ## Características - Response
 
 ### Status Code
@@ -16,9 +32,23 @@ Indica el **estado general de la respuesta**, incluido el código de estado y el
 Información adicional sobre la respuesta o el servidor, como el tipo y longitud del contenido y directivas de almacenamiento en caché.
 ### Body
 Contiene los datos solicitados por el servidor, a menudo en formatos como **JSON**, **XML** o textos sin formato.
+#### Ejemplo
+```python
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 85
+Date: Wed, 24 Jul 2024 12:28:53 GMT
+Server: Apache/2.4.41 (Ubuntu)
+
+{
+  "id": 123,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "status": "active"
+}
+```
 
 ## Ejemplo con FastAPI
 ```python
 
 ```
-
