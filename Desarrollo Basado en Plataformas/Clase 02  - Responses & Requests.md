@@ -34,12 +34,15 @@ Información adicional sobre la respuesta o el servidor, como el tipo y longitud
 Contiene los datos solicitados por el servidor, a menudo en formatos como **JSON**, **XML** o textos sin formato.
 #### Ejemplo
 ```python
+# Status Code
 HTTP/1.1 200 OK
+# Header
 Content-Type: application/json
 Content-Length: 85
 Date: Wed, 24 Jul 2024 12:28:53 GMT
 Server: Apache/2.4.41 (Ubuntu)
 
+# Body
 {
   "id": 123,
   "name": "John Doe",
