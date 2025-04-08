@@ -12,4 +12,7 @@
 - Principios
 	- Abstracción sobre tipos
 	- Polimorfismo paramétrico
-	- 
+	- Requisito de tipos
+	- Separación de algoritmo y estructura
+	- Resolución en compilación
+	- Abstracción sin costo
