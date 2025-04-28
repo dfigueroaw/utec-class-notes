@@ -1,0 +1,16 @@
+## Iterators
+- Es un objeto que se comporta como un puntero genérico y por tanto incluye sus principales características:
+	- Diferencia
+	- Aritmética de punteros
+	- Compatación
+- El uso de iteradores permite recorrer y / o  modificar loos datos de un contenedor sin la necesidad de saber que contenedor hay detrás de el.
+- Es el medio que utiliza un algoritmo para recorrer un contenedor.
+- Facilita la implementación de los algoritmos genéricos, **no** requieren saber cual es el tipo de contenedor sobre el que se opera.
+- Tiene varios tipos
+	- Input iterator
+	- Output iterator
+	- Forward iterator
+	- Bidirectional Iterator
+	- Radom access iterator
+	- Contiguous iterator
+- 
