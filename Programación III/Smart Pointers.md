@@ -47,11 +47,7 @@ El objeto se elimina cuando **todas** las referencias desaparecen.
 
 ## Weak Pointer
 
-El **`std::weak_ptr`** es un puntero observador que **no incrementa el contador de referencias** del `shared_ptr`, ayudando a evitar ciclos de referencia.
-
-### Características:
-- No afecta la propiedad ni la gestión de memoria.
-- Útil para evitar ciclos de referencia en estructuras con enlaces mutuos.
+El `std::weak_ptr` es un puntero observador que **no incrementa el contador de referencias** del `shared_ptr`, lo que ayuda a evitar ciclos de referencia en estructuras con enlaces mutuos. No afecta la propiedad ni la gestión de memoria, y es especialmente útil cuando se necesita una referencia a un objeto sin comprometer su ciclo de vida.
 
 ### Métodos principales:
 - **`lock()`**: Convierte el `weak_ptr` en `shared_ptr` si el objeto aún existe.
