@@ -24,13 +24,21 @@ sums . push_back (s);
 return sums ;  
 }```
 - Función de coste: $T(n)=c_1+(n-k+1)(c_2+c_3k+c_4)+c_5$
-Desarrollando el producto, se obtiene
+Desarrollando el producto, se obtiene:
 $$c_1+c_2n+c_3kn+c_4n-c_2k-c_3k^2-c_4k+c_2+c_3k+c_4+c_5$$
-Agrupando términos
-$$(c_1+c_2+c_4+c_5)+(c_3-c_2-c_4)k+(c_2+c_4)n+c_3kn-c_3k^2$$
+Agrupando términos:
+$$T(n, k)=(c_1+c_2+c_4+c_5)+(c_3-c_2-c_4)k+(c_2+c_4)n+c_3kn-c_3k^2$$
+Juntando las constantes:
+$$T(n, k)=c_6+c_7k+c_8n+c_3kn-c_3k^2$$
+- Notación asintótica:
+$$\mathcal{O}(T(n, k)) = \mathcal{O}(c_6+c_7k+c_8n+c_3kn-c_3k^2)$$
+Usando la propiedad distributiva:
+$$\mathcal{O}(c_6)+\mathcal{O}(c_7k)+\mathcal{O}(c_8n)+\mathcal{O}(c_3kn)-\mathcal{O}(c_3k^2)$$
+Desarrollando
+$$\mathcal{O}(1)+\mathcal{O}(k)+\mathcal{O}(n)+\mathcal{O}(kn)-\mathcal{O}(k^2)$$
+Simplificando y tomando en cuenta que $k \ll n$, finalmente se tiene:
+$$\mathcal{O}(n)$$
 
-Si $k \ll n$, podemos tomar $k$ como constante respecto a $n$.z
-- Notación asintótica: $\mathcal{O}(n)$
 ### Ejercicio 3
 ```cpp
 // Búsqueda de máximo local  
