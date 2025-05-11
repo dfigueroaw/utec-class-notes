@@ -29,7 +29,7 @@ $$c_1+c_2n+c_3kn+c_4n-c_2k-c_3k^2-c_4k+c_2+c_3k+c_4+c_5$$
 Agrupando términos:
 $$T(n, k)=(c_1+c_2+c_4+c_5)+(c_3-c_2-c_4)k+(c_2+c_4)n+c_3kn-c_3k^2$$
 Juntando las constantes:
-$$T(n, k)=c_6+c_7k+c_8n+c_3kn-c_3k^2$$
+$$T(n, k)=a_1+a_2k+a_3n+a_4kn-a_5k^2$$
 - Notación asintótica:
 $$\mathcal{O}(T(n, k)) = \mathcal{O}(c_6+c_7k+c_8n+c_3kn-c_3k^2)$$
 Usando la propiedad distributiva:
