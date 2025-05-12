@@ -51,7 +51,7 @@ maxima . push_back (v[i ]) ;
 return maxima ;  
 }
 ```
-- Función de coste: $T(n)=$
+- Función de coste: $T(n)=c_1+c_2(n-2)$
 - Notación asintótica: $\mathcal{O}()$
 ### Ejercicio 4
 ```cpp
