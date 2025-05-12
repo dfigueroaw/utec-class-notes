@@ -1,4 +1,3 @@
-
 Los **smart pointers** en C++ permiten gestionar automáticamente la memoria, reduciendo errores comunes como fugas de memoria y referencias inválidas. Se encuentran definidos en la cabecera `<memory>`.
 
 ## Unique Pointer
