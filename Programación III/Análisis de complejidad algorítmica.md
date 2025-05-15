@@ -23,7 +23,7 @@ $$T(n)=a+bn$$
 $$\mathcal{O}(T(n)) = \mathcal{O}(a+bn)$$
 Usando la propiedad distributiva:
 $$\mathcal{O}(T(n)) = \mathcal{O}(a)+\mathcal{O}(bn)$$
-Simplificando
+Simplificando:
 $$\mathcal{O}(T(n)) = \mathcal{O}(n)$$
 ### Ejercicio 3
 ```cpp
@@ -36,24 +36,33 @@ auto find_local_max(const std::vector<int>& v) {
     return maxima;
 }
 ```
-- Función de coste: $T(n)=c_1+a_1(n-2)$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n)=c+a_1(n-2)$
+Desarrollando:
+$$T(n)=c+a_1n-2a_1$$
+Simplificando las constantes:
+$$T(n)=a_1n+a_2$$
+- Notación asintótica:
+$$\mathcal{O}(T(n))=\mathcal{O}(a_1n+a_2)$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(a_1n)+\mathcal{O}(a_2)$$
+Simplificando, asumiendo las constantes amortizadas como tiempo constante:
+$$\mathcal{O}(T(n))=\mathcal{O}(n)$$
+
 ### Ejercicio 4
 ```cpp
-// Detección de duplicados en un vector  
-# include < vector >  
-# include <set >  
-bool has_duplicate ( const std :: vector < int >& v) {  
-std :: set < int > seen ;  
-for ( int x : v) {  
-// Paso 1: buscar en ’ seen ’  
-if ( seen . find (x) != seen . end () )  
-return true ;  
-// Paso 2: insertar en ’ seen ’  
-seen . insert (x);  
-}  
-return false ;  
+#include <vector>
+#include <set>
+
+bool has_duplicate(const std::vector<int>& v) {
+    std::set<int> seen;
+    for(int x : v) {
+        if(seen.find(x) != seen.end())
+            return true;
+        seen.insert(x);
+    }
+    return false;
 }
+
 ```
 - Función de coste: $T(n)=$
 - Notación asintótica: $\mathcal{O}()$
