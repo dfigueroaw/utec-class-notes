@@ -1,57 +1,42 @@
-### Ejercicio 1
-```cpp
-// Recorrido lineal simple  
-auto count_zeros ( const std :: vector < int >& v) {  
-int count = 0;  
-for ( int x : v) {  
-if (x == 0) ++ count ;  
-}  
-return count ;  
-}
-```
-- Función de coste: $T(n)=c_1+c_2n+c_3$
-- Notación asintótica: $\mathcal{O}(n)$
+De aquí en adelante:
+- $c_n$ es una **constante arbitraria**, para todo $n \in \mathbb{N}$.
+- $a_n$ refiere a una **constante amortiguada**, para todo $n \in \mathbb{N}$.
+	- Cuando hay una constante amortiguada, generalmente tendrá complejidad asintótica $\mathcal{O}(1)$, sin embargo, en iteraciones específicas puede llegar a ser $\mathcal{O}(n)$. Por conveniencia, se tomará como complejidad $\mathcal{O}(1)$.
+	- Por ejemplo, al insertar elementos al final de un vector, si la cantidad de elementos es menor que la capacidad, el tiempo de inserción es constante, pues el nuevo elemento se crea en un espacio libre de memoria. No obstante, cuando la cantidad de elementos alcanza la capacidad del vector, ya no se pueden realizar más inserciones de manera contigua en la memoria, por lo que es necesario copiar todos los elementos a un nuevo espacio en la memoria, lo cual escala linealmente según la cantidad de elementos. En el vector de la librería estándar, cuando se llega a este límite, el nuevo espacio reservado posee el doble de capacidad, por lo tanto, si se acaba de realizar una copia, no volverá a ocurrir hasta que la cantidad de elementos doble la actual (a menos ocurra algún tipo de intervención).
 ### Ejercicio 2
 ```cpp
-// Suma acumulada en ventana fija  
-auto window_sum ( const std :: vector < int >& v , int k) {  
-std :: vector < long > sums ;  
-for ( int i = 0; i + k <= ( int )v. size () ; ++ i) {  
-long s = 0;  
-for ( int j = 0; j < k; ++ j) s += v[i+j ];  
-sums . push_back (s);  
-}  
-return sums ;  
+auto window_sum(const std::vector<int>& v, int k) {
+    std::vector<long> sums; // Inicializar vector vacío, tiempo constante.
+    for(int i = 0; i + k <= (int)v.size(); ++i) { // Recorre n - k + 1 pasos, tiempo lineal.
+        long s = 0; // Inicializar variable, tiempo constante.
+        for(int j = 0; j < k; ++j) // Recorre k pasos, tiempo lineal.
+            s += v[i + j]; // Añadir a una variable, tiempo constante.
+        sums.push_back(s); // Añadir al final de un vector, tiempo constante amortiguado.
+    }
+    return sums;
+}
 }```
-- Función de coste: $T(n)=c_1+(n-k+1)(c_2+c_3k+c_4)+c_5$
-Desarrollando el producto, se obtiene:
-$$c_1+c_2n+c_3kn+c_4n-c_2k-c_3k^2-c_4k+c_2+c_3k+c_4+c_5$$
-Agrupando términos:
-$$T(n, k)=(c_1+c_2+c_4+c_5)+(c_3-c_2-c_4)k+(c_2+c_4)n+c_3kn-c_3k^2$$
-Juntando las constantes:
-$$T(n, k)=a_1+a_2k+a_3n+a_4kn-a_5k^2$$
+- Función de coste: $T(n, k)=c_1+(n-k+1)(c_2+c_3k+a_1)$
+Dado $k \ll n$, podemos tomar $k$ como si fuera un valor constante. Finalmente se obtiene:
+$$T(n)=a+bn$$
 - Notación asintótica:
-$$\mathcal{O}(T(n, k)) = \mathcal{O}(c_6+c_7k+c_8n+c_3kn-c_3k^2)$$
+$$\mathcal{O}(T(n)) = \mathcal{O}(a+bn)$$
 Usando la propiedad distributiva:
-$$\mathcal{O}(c_6)+\mathcal{O}(c_7k)+\mathcal{O}(c_8n)+\mathcal{O}(c_3kn)-\mathcal{O}(c_3k^2)$$
-Desarrollando
-$$\mathcal{O}(1)+\mathcal{O}(k)+\mathcal{O}(n)+\mathcal{O}(kn)-\mathcal{O}(k^2)$$
-Simplificando y tomando en cuenta que $k \ll n$, finalmente se tiene:
-$$\mathcal{O}(n)$$
-
+$$\mathcal{O}(T(n)) = \mathcal{O}(a)+\mathcal{O}(bn)$$
+Simplificando
+$$\mathcal{O}(T(n)) = \mathcal{O}(n)$$
 ### Ejercicio 3
 ```cpp
-// Búsqueda de máximo local  
-auto find_local_max ( const std :: vector < int >& v) {  
-std :: vector < int > maxima ;  
-for ( size_t i = 1; i + 1 < v. size () ; ++ i) {  
-if (v[i] > v[i -1] && v[i] > v[i +1])  
-maxima . push_back (v[i ]) ;  
-}  
-return maxima ;  
+auto find_local_max(const std::vector<int>& v) {
+    std::vector<int> maxima; // Inicializar vector, tiempo constante
+    for(size_t i = 1; i + 1 < v.size(); ++i) { // n - 2 iteraciones, donde n es el tamaño del vector. Tiempo lineal.
+        if(v[i] > v[i - 1] && v[i] > v[i + 1]) // Comparación, tiempo constante
+            maxima.push_back(v[i]); // Inserción al final de un vector, complejidad amortiguada
+    }
+    return maxima;
 }
 ```
-- Función de coste: $T(n)=c_1+c_2(n-2)$
+- Función de coste: $T(n)=c_1+a_1(n-2)$
 - Notación asintótica: $\mathcal{O}()$
 ### Ejercicio 4
 ```cpp
