@@ -4,6 +4,20 @@ De aquí en adelante:
 	- Cuando hay una constante amortiguada, generalmente tendrá complejidad asintótica $\mathcal{O}(1)$, sin embargo, en iteraciones específicas puede llegar a ser $\mathcal{O}(n)$. Por conveniencia, se tomará como complejidad $\mathcal{O}(1)$.
 	- Por ejemplo, al insertar elementos al final de un vector, si la cantidad de elementos es menor que la capacidad, el tiempo de inserción es constante, pues el nuevo elemento se crea en un espacio libre de memoria. No obstante, cuando la cantidad de elementos alcanza la capacidad del vector, ya no se pueden realizar más inserciones de manera contigua en la memoria, por lo que es necesario copiar todos los elementos a un nuevo espacio en la memoria, lo cual escala linealmente según la cantidad de elementos. En el vector de la librería estándar, cuando se llega a este límite, el nuevo espacio reservado posee el doble de capacidad, por lo tanto, si se acaba de realizar una copia, no volverá a ocurrir hasta que la cantidad de elementos doble la actual (a menos ocurra algún tipo de intervención).
 
+### Ejercicio 1 (ejemplo)
+```cpp
+auto count_zeros(const std::vector<int>& v) {
+    int count = 0;
+    for(int x : v) {
+        if(x == 0) ++count;
+    }
+    return count;
+}
+
+```
+- **Función de coste**: $T(n)=c_1n+c_2$
+- **Notación asintótica**: $\mathcal{O}(n)$
+
 ### Ejercicio 2
 ```cpp
 auto window_sum(const std::vector<int>& v, int k) {
@@ -16,7 +30,8 @@ auto window_sum(const std::vector<int>& v, int k) {
     }
     return sums;
 }
-}```
+```
+
 - **Función de coste**: $T(n, k)=c_1+(n-k+1)(c_2+c_3k+a_1)$
 Dado $k \ll n$, podemos tomar $k$ como si fuera un valor constante. Finalmente se obtiene:
 $$T(n)=c_1+(c_4+a_1)n$$
@@ -25,7 +40,7 @@ $$\mathcal{O}(T(n)) = \mathcal{O}(c_1+(c_4+a_1)n)$$
 Usando la propiedad distributiva:
 $$\mathcal{O}(T(n)) = \mathcal{O}(c_1)+\mathcal{O}((c_4+a_1)n)$$
 Simplificando:
-$$\mathcal{O}(T(n)) = \mathcal{O}(1) + \mathcal{O}(n)=\mathcal{O}(n)$$
+$$\mathcal{O}(T(n)) = \mathcal{O}(1) + \mathcal{O}(n)=\boxed{\mathcal{O}(n)}$$
 
 ### Ejercicio 3
 ```cpp
@@ -38,6 +53,7 @@ auto find_local_max(const std::vector<int>& v) {
     return maxima;
 }
 ```
+
 - **Función de coste**: $T(n)=c+a_1(n-2)$
 Desarrollando:
 $$T(n)=c+a_1n-2a_1$$
@@ -48,7 +64,7 @@ $$\mathcal{O}(T(n))=\mathcal{O}(a_1n+a_2)$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(a_1n)+\mathcal{O}(a_2)$$
 Simplificando, asumiendo las constantes amortizadas como tiempo constante:
-$$\mathcal{O}(T(n))=\mathcal{O}(n)+\mathcal{O}(1)=\mathcal{O}(n)$$
+$$\mathcal{O}(T(n))=\mathcal{O}(n)+\mathcal{O}(1)=\boxed{\mathcal{O}(n)}$$
 
 ### Ejercicio 4
 ```cpp
@@ -65,6 +81,7 @@ bool has_duplicate(const std::vector<int>& v) {
     return false;
 } // Internamente implementa un tipo especial de Arbol de búsqueda binaria, asumiendo que es balanceado debería escalar de manera logaritmica.
 ```
+
 - **Función de coste**: $T(n)=c_1+n(c_2log(n)+c_3log(n))$
 Simplificando:
 $$T(n)=c_1+c_4nlog(n)$$
@@ -73,7 +90,7 @@ $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_4nlog(n))$$
 Aplicando la propiedad distributiva
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_4nlog(n))$$
 Simplificando
-$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))=\mathcal{O}(nlog(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))=\boxed{\mathcal{O}(nlog(n))}$$
 
 ### Ejercicio 5
 ```cpp
@@ -88,13 +105,16 @@ int binary_search(const std::vector<int>& v, int x) {
     return -1;
 }
 ```
+
+Sea $k$ el número de iteraciones, se puede apreciar que el tamaño del rango de búsqueda es $\frac{n}{2^k}$, el cual debería detenerse cuando tiene 1 o 0 elementos, de lo cual se obtiene la desigualdad $\frac{n}{2^k}\leq1$. Despejando, obtenemos $n\leq2^k$, y aplicando logaritmo a ambos lados se ve que $log_2(n)\leq k$, de lo cual podemos deducir que la complejidad algorítmica es logarítmica.
 - **Función de coste**: $T(n)=c_1+c_2log(n)$
 - **Notación asintótica**:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2log(n))$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2log(n))$$
 Simplificando:
-$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(log(n))=\mathcal{O}(log(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(log(n))=\boxed{\mathcal{O}(log(n))}$$
+
 ### Ejercicio 6
 ```cpp
 auto reduce_log(std::vector<int> v) {
@@ -105,11 +125,12 @@ auto reduce_log(std::vector<int> v) {
     return v.front(); // Retorna el primer elemento. Debería ocurrir un error si la cantidad de elementos es par, pues en la última iteración se eliminarían los dos últimos elementos y no habria ningún front
 }
 ```
+
 - **Función de coste**: $T(n)=\frac{c_1}{2}n$
 - **Notación asintótica**:
 $$\mathcal{O}(T(n))=\mathcal{O}(\frac{c_1}{2}n)$$
 Simplificando las constantes:
-$$\mathcal{O}(T(n))=\mathcal{O}(n)$$
+$$\mathcal{O}(T(n))=\boxed{\mathcal{O}(n)}$$
 ### Ejercicio 7
 ```cpp
 #include <vector>
@@ -124,6 +145,7 @@ std::vector<int> merge_and_sort(const std::vector<int>& a, const std::vector<int
     return c;
 }
 ```
+
 - **Función de coste**: $T(n_1, n_2)=c1+c_2(n_1+n_2)+a_1n_1+a_2n_2+c_3(n_1+n_2)log(n_1+n_2)$
 - **Notación asintótica**:
 Primero, podemos tomar $n=\max(n_1, n_2)$ para reducir la función a una variable. No debería haber problema al realizar esta sustitución pues se está tomando el mayor tamaño entre los vectores, como si fuera una cota superior. La nueva función sería
@@ -131,7 +153,7 @@ $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2n+a_1n+c_3nlog(n))$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2n)+\mathcal{O}(a_1n)+\mathcal{O}(c_3nlog(n))$$
 Simplificando:
-$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(n)+\mathcal{O}(n)+\mathcal{O}(nlog(n))=\mathcal{O}(nlog(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(n)+\mathcal{O}(n)+\mathcal{O}(nlog(n))=\boxed{\mathcal{O}(nlog(n))}$$
 ### Ejercicio 8
 ```cpp
 #include <vector>
@@ -163,6 +185,7 @@ std::vector<Interval> merge_intervals(std::vector<Interval>& intervals) {
     return result;
 }
 ```
+
 - Función de coste: $T(n)=c_1+c_2nlog(n)+c_3n+c_4(n-1)$
 - Notación asintótica:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2nlog(n)+c_3n+c_4(n-1))$$
@@ -171,7 +194,7 @@ $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2nlog(n)+c_5n)$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2nlog(n))+\mathcal{O}(c_5n)$$
 Simplificando:
-$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))+\mathcal{O}(n)=\mathcal{O}(nlog(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))+\mathcal{O}(n)=\boxed{\mathcal{O}(nlog(n))}$$
 ### Ejercicio 9
 ```cpp
 #include <vector>
@@ -179,19 +202,25 @@ $$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))+\mathcal{O}(n)=\mathcal{
 
 void reverse_chunks(std::vector<int>& v, int k) {
     int n = static_cast<int>(v.size()); // Typecastea el tamaño a entero, constante
-    for(int i = 0; i < n; i += k) { // Iterar los elementos el vector, lineal
+    for(int i = 0; i < n; i += k) { // Iterar los elementos el vector, lineal. Itera según el tamaño del vector y el valor del step k, por lo que se podria deducir que escala segun un factor n/k.
         int left = i; // Asignación, constante
         int right = std::min(i + k - 1, n - 1); // Asignación, constante. Toma el mínimo entre el último indice del vector y el i-esimo elemento más el valor del step (k)
         while(left < right) {
             std::swap(v[left], v[right]); // Intercambiar elementos, constante
             ++left; // Aumentar valor de variable, constante
             --right; // Aumentar valor de variable, constante
-        } // Realiza iteraciones la cantidad de veces entre
+        } // Itera k/2 veces, pues ambos contadores se van acercando durante cada step del while.
     }
 }
 ```
-- Función de coste: $T(n, k)=c_1+n(c_2+c_3(k))$
-- Notación asintótica: $\mathcal{O}()$
+
+- Función de coste: $T(n, k)=c_1+\left\lceil \frac{n}{k} \right\rceil(c_2+c_3\left\lfloor \frac{k}{2} \right\rfloor)$
+- Notación asintótica: Sabiendo que $k$ es menor que $n$, podemos tomarla como una entrada de orden constante respecto a n. La función de costo entonces tendría la forma:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_4n)$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_4n)$$
+Finalmente, simplificando:
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(n)=\boxed{\mathcal{O}(n)}$$
 ### Ejercicio 10
 ```cpp
 #include <vector>
@@ -206,10 +235,11 @@ void rotate_right(std::vector<int>& v, int k) {
         v[i] = tail[i];// Asignación, constante
 } // Entre los dos últimos bucles, ocurren n - k + k = n iteraciones
 ```
+
 - Función de coste: $T(n, k)=c_1+c_2k+c_3n$
 - Notación asintótica: Sabemos que $k<n$, por lo que podemos tomar la complejidad respecto a $n$ y a $k$ como constante.
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2k+c_3n)$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2k)+\mathcal{O}(c_3n)$$
 Simplificando:
-$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(1)+\mathcal{O}(n)=\mathcal{O}(n)$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(1)+\mathcal{O}(n)=\boxed{\mathcal{O}(n)}$$
