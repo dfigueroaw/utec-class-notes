@@ -75,47 +75,52 @@ $$\mathcal{O}(T(n))=\mathcal{O}(nlog(n))$$
 ### Ejercicio 5
 ```cpp
 int binary_search(const std::vector<int>& v, int x) {
-    int low = 0, high = v.size() - 1;
+    int low = 0, high = v.size() - 1; //  Asignación, tiempo constante
     while(low <= high) {
         int mid = low + (high - low)/2;
-        if(v[mid] == x) return mid;
-        if(v[mid] < x) low = mid + 1;
-        else high = mid - 1;
-    }
+        if(v[mid] == x) return mid; // Si encuentra el resultado, lo retorna, tiempo constante
+        if(v[mid] < x) low = mid + 1; // Si el target es mayor, busca en la mitad superior
+        else high = mid - 1; // Si el target es menor, busca en la mitad inferior
+    } // En cada busqueda (iteración) reduce el espacio a buscar por la mitad, por lo que escala logaritmicamente con respecto al tamaño del vector de entrada.
     return -1;
 }
 ```
-- Función de coste: $T(n)=$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n)=c_1log(n)$
+- Notación asintótica:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1log(n))$$
+Simplificando:
+$$\mathcal{O}(T(n))=\mathcal{O}(log(n))$$
 ### Ejercicio 6
 ```cpp
-// Reducción sucesiva  
-auto reduce_log ( std :: vector < int > v) {  
-while (v. size () > 1) {  
-v. pop_back () ;  
-v. pop_back () ;  
-}  
-return v. front () ;  
+auto reduce_log(std::vector<int> v) {
+    while(v.size() > 1) {
+        v.pop_back(); // Eliminar al final de un vector, tiempo constante
+        v.pop_back();
+    } //  Itera n/2 veces al vector
+    return v.front(); // Retorna el primer elemento. Debería ocurrir un error si la cantidad de elementos es par, pues en la última iteración se eliminarían los dos últimos elementos y no habria ningún front
 }
 ```
-- Función de coste: $T(n)=$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n)=\frac{c_1}{2}n$
+- Notación asintótica:
+$$\mathcal{O}(T(n))=\mathcal{O}(\frac{c_1}{2}n)$$
+Simplificando las constantes:
+$$\mathcal{O}(T(n))=\mathcal{O}(n)$$
 ### Ejercicio 7
 ```cpp
-// Mezcla y ordenación de dos vectores  
-# include < vector >  
-# include < algorithm >  
-std :: vector < int > merge_and_sort ( const std :: vector < int >& a ,  
-const std :: vector < int >& b) {  
-std :: vector < int > c;  
-c. reserve (a. size () + b. size () ); // Paso 1  
-for ( int x : a) c. push_back (x); // Paso 2  
-for ( int y : b) c. push_back (y); // Paso 3  
-std :: sort (c. begin () , c. end () ); // Paso 4  
-return c;  
+#include <vector>
+#include <algorithm>
+
+std::vector<int> merge_and_sort(const std::vector<int>& a, const std::vector<int>& b) {
+    std::vector<int> c; // Crear nuevo vector, tiempo constante
+    c.reserve(a.size() + b.size()); // Incluso si no se está moviendo memoria, la complejidad de la reserva sigue siendo lineal, aunque muy rapida pues no se está copiando data
+    for(int x : a) c.push_back(x); // Insertar todos los elementos del vector a, la inserción es constante amortizada, y las la cantidad total de nservciones es lineal según la longitud del primer vector.
+    for(int y : b) c.push_back(y); // Igual que en el caso anterior, lineal según la longitud del segundo vector
+    std::sort(c.begin(), c.end()); // Utiliza sort de la librería estandar de C++, por lo general tiene complejidad nlogn
+    return c;
 }
+
 ```
-- Función de coste: $T(n)=$
+- Función de coste: $T(n_1, n_2)=c1+c_2(n_1+n_2)+c_3n_1+c_4n_2$
 - Notación asintótica: $\mathcal{O}()$
 ### Ejercicio 8
 ```cpp
