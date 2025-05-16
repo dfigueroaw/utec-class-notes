@@ -54,30 +54,35 @@ $$\mathcal{O}(T(n))=\mathcal{O}(n)$$
 #include <set>
 
 bool has_duplicate(const std::vector<int>& v) {
-    std::set<int> seen;
-    for(int x : v) {
-        if(seen.find(x) != seen.end())
+    std::set<int> seen; // Inicializar un set, tiempo constante
+    for(int x : v) { // Iterar un vector, tiempo lineal
+        if(seen.find(x) != seen.end()) // Busqueda en set, tiempo logaritmico
             return true;
-        seen.insert(x);
+        seen.insert(x); // Insertar a un set, tiempo logaritmico en relacion al tamaño del set.
     }
     return false;
-}
-
+} // Internamente implementa un tipo especial de Arbol de búsqueda binaria, asumiendo que es balanceado debería escalar de manera logaritmica.
 ```
-- Función de coste: $T(n)=$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n)=c_1+n(c_2log(n)+c_3log(n))$
+Simplificando:
+$$T(n)=c_1+c_4nlog(n)$$
+- Notación asintótica:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_4nlog(n))$$
+Aplicando la propiedad distributiva
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_4nlog(n))$$
+Simplificando
+$$\mathcal{O}(T(n))=\mathcal{O}(nlog(n))$$
 ### Ejercicio 5
 ```cpp
-// Búsqueda binaria iterativa  
-int binary_search ( const std :: vector < int >& v , int x) {  
-int low = 0, high = v. size () -1;  
-while ( low <= high ) {  
-int mid = low + ( high - low ) /2;  
-if (v[ mid ] == x) return mid ;  
-if (v[ mid ] < x) low = mid + 1;  
-else high = mid - 1;  
-}  
-return -1;  
+int binary_search(const std::vector<int>& v, int x) {
+    int low = 0, high = v.size() - 1;
+    while(low <= high) {
+        int mid = low + (high - low)/2;
+        if(v[mid] == x) return mid;
+        if(v[mid] < x) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
 }
 ```
 - Función de coste: $T(n)=$
