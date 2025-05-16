@@ -3,6 +3,7 @@ De aquí en adelante:
 - $a_n$ refiere a una **constante amortiguada**, para todo $n \in \mathbb{N}$.
 	- Cuando hay una constante amortiguada, generalmente tendrá complejidad asintótica $\mathcal{O}(1)$, sin embargo, en iteraciones específicas puede llegar a ser $\mathcal{O}(n)$. Por conveniencia, se tomará como complejidad $\mathcal{O}(1)$.
 	- Por ejemplo, al insertar elementos al final de un vector, si la cantidad de elementos es menor que la capacidad, el tiempo de inserción es constante, pues el nuevo elemento se crea en un espacio libre de memoria. No obstante, cuando la cantidad de elementos alcanza la capacidad del vector, ya no se pueden realizar más inserciones de manera contigua en la memoria, por lo que es necesario copiar todos los elementos a un nuevo espacio en la memoria, lo cual escala linealmente según la cantidad de elementos. En el vector de la librería estándar, cuando se llega a este límite, el nuevo espacio reservado posee el doble de capacidad, por lo tanto, si se acaba de realizar una copia, no volverá a ocurrir hasta que la cantidad de elementos doble la actual (a menos ocurra algún tipo de intervención).
+
 ### Ejercicio 2
 ```cpp
 auto window_sum(const std::vector<int>& v, int k) {
@@ -16,15 +17,16 @@ auto window_sum(const std::vector<int>& v, int k) {
     return sums;
 }
 }```
-- Función de coste: $T(n, k)=c_1+(n-k+1)(c_2+c_3k+a_1)$
+- **Función de coste**: $T(n, k)=c_1+(n-k+1)(c_2+c_3k+a_1)$
 Dado $k \ll n$, podemos tomar $k$ como si fuera un valor constante. Finalmente se obtiene:
-$$T(n)=a+bn$$
-- Notación asintótica:
-$$\mathcal{O}(T(n)) = \mathcal{O}(a+bn)$$
+$$T(n)=c_1+(c_4+a_1)n$$
+- **Notación asintótica**:
+$$\mathcal{O}(T(n)) = \mathcal{O}(c_1+(c_4+a_1)n)$$
 Usando la propiedad distributiva:
-$$\mathcal{O}(T(n)) = \mathcal{O}(a)+\mathcal{O}(bn)$$
+$$\mathcal{O}(T(n)) = \mathcal{O}(c_1)+\mathcal{O}((c_4+a_1)n)$$
 Simplificando:
-$$\mathcal{O}(T(n)) = \mathcal{O}(n)$$
+$$\mathcal{O}(T(n)) = \mathcal{O}(1) + \mathcal{O}(n)=\mathcal{O}(n)$$
+
 ### Ejercicio 3
 ```cpp
 auto find_local_max(const std::vector<int>& v) {
@@ -36,17 +38,17 @@ auto find_local_max(const std::vector<int>& v) {
     return maxima;
 }
 ```
-- Función de coste: $T(n)=c+a_1(n-2)$
+- **Función de coste**: $T(n)=c+a_1(n-2)$
 Desarrollando:
 $$T(n)=c+a_1n-2a_1$$
 Simplificando las constantes:
 $$T(n)=a_1n+a_2$$
-- Notación asintótica:
+- **Notación asintótica**:
 $$\mathcal{O}(T(n))=\mathcal{O}(a_1n+a_2)$$
 Aplicando la propiedad distributiva:
 $$\mathcal{O}(T(n))=\mathcal{O}(a_1n)+\mathcal{O}(a_2)$$
 Simplificando, asumiendo las constantes amortizadas como tiempo constante:
-$$\mathcal{O}(T(n))=\mathcal{O}(n)$$
+$$\mathcal{O}(T(n))=\mathcal{O}(n)+\mathcal{O}(1)=\mathcal{O}(n)$$
 
 ### Ejercicio 4
 ```cpp
@@ -63,15 +65,16 @@ bool has_duplicate(const std::vector<int>& v) {
     return false;
 } // Internamente implementa un tipo especial de Arbol de búsqueda binaria, asumiendo que es balanceado debería escalar de manera logaritmica.
 ```
-- Función de coste: $T(n)=c_1+n(c_2log(n)+c_3log(n))$
+- **Función de coste**: $T(n)=c_1+n(c_2log(n)+c_3log(n))$
 Simplificando:
 $$T(n)=c_1+c_4nlog(n)$$
-- Notación asintótica:
+- **Notación asintótica**:
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_4nlog(n))$$
 Aplicando la propiedad distributiva
 $$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_4nlog(n))$$
 Simplificando
-$$\mathcal{O}(T(n))=\mathcal{O}(nlog(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))=\mathcal{O}(nlog(n))$$
+
 ### Ejercicio 5
 ```cpp
 int binary_search(const std::vector<int>& v, int x) {
@@ -85,11 +88,13 @@ int binary_search(const std::vector<int>& v, int x) {
     return -1;
 }
 ```
-- Función de coste: $T(n)=c_1log(n)$
-- Notación asintótica:
-$$\mathcal{O}(T(n))=\mathcal{O}(c_1log(n))$$
+- **Función de coste**: $T(n)=c_1+c_2log(n)$
+- **Notación asintótica**:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2log(n))$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2log(n))$$
 Simplificando:
-$$\mathcal{O}(T(n))=\mathcal{O}(log(n))$$
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(log(n))=\mathcal{O}(log(n))$$
 ### Ejercicio 6
 ```cpp
 auto reduce_log(std::vector<int> v) {
@@ -100,8 +105,8 @@ auto reduce_log(std::vector<int> v) {
     return v.front(); // Retorna el primer elemento. Debería ocurrir un error si la cantidad de elementos es par, pues en la última iteración se eliminarían los dos últimos elementos y no habria ningún front
 }
 ```
-- Función de coste: $T(n)=\frac{c_1}{2}n$
-- Notación asintótica:
+- **Función de coste**: $T(n)=\frac{c_1}{2}n$
+- **Notación asintótica**:
 $$\mathcal{O}(T(n))=\mathcal{O}(\frac{c_1}{2}n)$$
 Simplificando las constantes:
 $$\mathcal{O}(T(n))=\mathcal{O}(n)$$
@@ -118,86 +123,93 @@ std::vector<int> merge_and_sort(const std::vector<int>& a, const std::vector<int
     std::sort(c.begin(), c.end()); // Utiliza sort de la librería estandar de C++, por lo general tiene complejidad nlogn
     return c;
 }
-
 ```
-- Función de coste: $T(n_1, n_2)=c1+c_2(n_1+n_2)+c_3n_1+c_4n_2$
-- Notación asintótica: $\mathcal{O}()$
+- **Función de coste**: $T(n_1, n_2)=c1+c_2(n_1+n_2)+a_1n_1+a_2n_2+c_3(n_1+n_2)log(n_1+n_2)$
+- **Notación asintótica**:
+Primero, podemos tomar $n=\max(n_1, n_2)$ para reducir la función a una variable. No debería haber problema al realizar esta sustitución pues se está tomando el mayor tamaño entre los vectores, como si fuera una cota superior. La nueva función sería
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2n+a_1n+c_3nlog(n))$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2n)+\mathcal{O}(a_1n)+\mathcal{O}(c_3nlog(n))$$
+Simplificando:
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(n)+\mathcal{O}(n)+\mathcal{O}(nlog(n))=\mathcal{O}(nlog(n))$$
 ### Ejercicio 8
 ```cpp
-# include < vector >  
-# include < algorithm >  
-using Interval = std :: pair < int , int >;  
-std :: vector < Interval > merge_intervals ( std :: vector < Interval >& intervals ) {  
-if ( intervals . empty () )  
-return {};  
-// Paso 1: ordenar por el inicio de cada intervalo  
-std :: sort ( intervals . begin () , intervals . end () ,  
-[]( const Interval & a , const Interval & b){  
-return a. first < b. first ;  
-}) ; // C1 : comparaci ón  
-std :: vector < Interval > result ;  
-result . reserve ( intervals . size () ); // C2 : reserva  
-// Paso 2: inicializar el intervalo actual  
-Interval current = intervals [0]; // C3 : asignaci ón  
-// Paso 3: recorrer y fusionar  
-for ( size_t i = 1; i < intervals . size () ; ++ i) { // C4 : bucle  
-if ( intervals [i ]. first <= current . second ) {  
-// solapan : ampliamos el extremo derecho  
-current . second = // C5 : comparaci ón + asignaci ón  
-std :: max ( current . second , intervals [i ]. second );  
-} else {  
-// no solapan : guardamos el actual y pasamos al siguiente  
-result . push_back ( current ); // C6 : push_back  
-current = intervals [i ]; // C7 : asignaci ón  
-}  
-}  
-// Paso 4: añ adir el ú ltimo  
-result . push_back ( current ); // C8 : push_back  
-return result ; // C9 : return  
+#include <vector>
+#include <algorithm>
+
+using Interval = std::pair<int, int>;
+
+std::vector<Interval> merge_intervals(std::vector<Interval>& intervals) {
+    if(intervals.empty()) return {}; // Verificar que un vector es vacío, tiempo constante
+
+    std::sort(intervals.begin(), intervals.end(),
+              [](const Interval& a, const Interval& b) {
+                  return a.first < b.first;
+              }); // Ordenar un arreglo de datod, complejidad nlog(n)
+
+    std::vector<Interval> result; // Crear un vector, tiempo constante
+    result.reserve(intervals.size()); // Reservar espacio para un vector, tiempo lineal
+
+    Interval current = intervals[0]; // Asignación, tiempo constante
+    for(size_t i = 1; i < intervals.size(); ++i) { // Iterar desde el indice 1 el vector de intervalos entrada, n-1 iteraciones (lineal)
+        if(intervals[i].first <= current.second) {
+            current.second = std::max(current.second, intervals[i].second); // Comparación, tiempo constante
+        } else {
+            result.push_back(current); // Agregar elemento al vector, tiempo constante pues ya se encuentra reservado el espacio
+            current = intervals[i]; // Asignación, constante
+        }
+    }
+    result.push_back(current); // Espacio reservado, tiempo constante
+    return result;
 }
 ```
-- Función de coste: $T(n)=$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n)=c_1+c_2nlog(n)+c_3n+c_4(n-1)$
+- Notación asintótica:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2nlog(n)+c_3n+c_4(n-1))$$
+Simplificando los terminos:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2nlog(n)+c_5n)$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2nlog(n))+\mathcal{O}(c_5n)$$
+Simplificando:
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(nlog(n))+\mathcal{O}(n)=\mathcal{O}(nlog(n))$$
 ### Ejercicio 9
 ```cpp
-// revierte cada bloque ( chunk ) de tamaño k en el vector  
-# include < vector >  
-# include < algorithm >  
-void reverse_chunks ( std :: vector < int >& v , int k) {  
-int n = static_cast < int >( v. size () ); // C1 : lectura de tama ño  
-for ( int i = 0; i < n; i += k) { // C2 : bucle externo  
-// ~ n/k iteraciones  
-int left = i;  
-int right = std :: min (i + k - 1, n - 1) ;  
-while ( left < right ) { // C3 : cada swap  
-// ~ suma de chunk /2 iteraciones  
-std :: swap (v[ left ], v[ right ]) ;  
-++ left ; // C4 : incremento de í ndice  
--- right ; // C4 : decremento de í ndice  
-}  
-}  
-// C5 : costes fijos ( control de bucles , return , etc .)  
+#include <vector>
+#include <algorithm>
+
+void reverse_chunks(std::vector<int>& v, int k) {
+    int n = static_cast<int>(v.size()); // Typecastea el tamaño a entero, constante
+    for(int i = 0; i < n; i += k) { // Iterar los elementos el vector, lineal
+        int left = i; // Asignación, constante
+        int right = std::min(i + k - 1, n - 1); // Asignación, constante. Toma el mínimo entre el último indice del vector y el i-esimo elemento más el valor del step (k)
+        while(left < right) {
+            std::swap(v[left], v[right]); // Intercambiar elementos, constante
+            ++left; // Aumentar valor de variable, constante
+            --right; // Aumentar valor de variable, constante
+        } // Realiza iteraciones la cantidad de veces entre
+    }
 }
 ```
-- Función de coste: $T(n)=$
+- Función de coste: $T(n, k)=c_1+n(c_2+c_3(k))$
 - Notación asintótica: $\mathcal{O}()$
 ### Ejercicio 10
 ```cpp
-// Rotación de elementos en un vector  
-# include < vector >  
-void rotate_right ( std :: vector < int >& v , int k) {  
-int n = v. size () ;  
-// Paso 1: ajustar k si es mayor que n  
-k = k % n;  
-// Paso 2: guardar los ú ltimos k en auxiliar  
-std :: vector < int > tail (v. end () -k , v. end () );  
-// Paso 3: desplazar los primeros n -k posiciones  
-for ( int i = n -1; i >= k; --i)  
-v[i] = v[i -k ];  
-// Paso 4: colocar el auxiliar al inicio  
-for ( int i = 0; i < k; ++ i)  
-v[i] = tail [i ];  
-}
+#include <vector>
+
+void rotate_right(std::vector<int>& v, int k) {
+    int n = v.size(); // Asignación, tiempo constante
+    k = k % n; // Operador modulo, tiempo constante
+    std::vector<int> tail(v.end() - k, v.end()); // Copia los k ultimos elementos del vector, complejidad lineal respecto a k
+    for(int i = n - 1; i >= k; --i) // Itera desde el ultimo elemento hasta el k-esimo elemento (n-k iteraciones)
+        v[i] = v[i - k]; // Asignación, constante
+    for(int i = 0; i < k; ++i) // Itera desde el primer elemento hasta el anterior al k-esimo elemento, lineal (k iteraciones)
+        v[i] = tail[i];// Asignación, constante
+} // Entre los dos últimos bucles, ocurren n - k + k = n iteraciones
 ```
-- Función de coste: $T(n)=$
-- Notación asintótica: $\mathcal{O}()$
+- Función de coste: $T(n, k)=c_1+c_2k+c_3n$
+- Notación asintótica: Sabemos que $k<n$, por lo que podemos tomar la complejidad respecto a $n$ y a $k$ como constante.
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1+c_2k+c_3n)$$
+Aplicando la propiedad distributiva:
+$$\mathcal{O}(T(n))=\mathcal{O}(c_1)+\mathcal{O}(c_2k)+\mathcal{O}(c_3n)$$
+Simplificando:
+$$\mathcal{O}(T(n))=\mathcal{O}(1)+\mathcal{O}(1)+\mathcal{O}(n)=\mathcal{O}(n)$$
