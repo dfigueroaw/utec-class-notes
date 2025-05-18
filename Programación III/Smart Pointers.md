@@ -14,12 +14,12 @@ El `std::unique_ptr` garantiza la **propiedad exclusiva** de un objeto en memori
 ```cpp
 auto ptrA = std::make_unique<Song>("El Cuarteto de Nos", "Algo mejor que hacer");
 ```
-![[Pasted image 20250501143138.png|center]]
+![[unique_ptr1.png|center]]
 
 ```cpp
 auto ptrB = std::move(ptrA); // Transfiere propiedad de ptrA a ptrB
 ```
-![[Pasted image 20250501143206.png|center]]
+![[unique_ptr2.png|center]]
 
 Cuando `ptrA` se transfiere a `ptrB`, `ptrA` queda vacío.
 
