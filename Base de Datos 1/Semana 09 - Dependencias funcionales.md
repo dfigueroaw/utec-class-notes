@@ -1,0 +1,1 @@
+Dada una relación R y dos conjuntos de atributos $X \in \mathbb{R}$ 
